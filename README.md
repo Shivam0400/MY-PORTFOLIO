@@ -1,61 +1,63 @@
-## Portfolio of Shivam Jaiswal
-Welcome to my personal portfolio! This website is a showcase of my skills, projects, and professional experience as a full-stack web developer. It's designed to be clean, responsive, and visually engaging, providing a comprehensive overview of my work.
+# 🌐 Portfolio of Shivam Jaiswal  
 
-✨ Features
-Dynamic Background: An interactive, animated background using Vanta.js that gives the site a modern, high-tech feel.
+Welcome to my personal portfolio!  
+This website is a showcase of my skills, projects, and professional experience as a **full-stack web developer**.  
+It's designed to be **clean, responsive, and visually engaging**, providing a comprehensive overview of my work.  
 
-Responsive Design: Optimized for a seamless experience on any device, from desktops to smartphones.
+---
 
-Interactive UI: Subtle hover effects and animations on cards and buttons.
+## ✨ Features  
+- **Dynamic Background**: Interactive, animated background using **Vanta.js**.  
+- **Responsive Design**: Seamless experience across all devices.  
+- **Interactive UI**: Smooth hover effects and animations.  
+- **Animated Typing Effect**: Eye-catching hero section powered by **Typed.js**.  
+- **Downloadable Resume**: Quick access to my professional resume.  
+- **Functional Contact Form**: Direct connection via **Email.js** integration.  
 
-Animated Typing Effect: A captivating hero section with a typing animation powered by Typed.js.
+---
 
-Downloadable Resume: Quick and easy access to my professional resume.
+## 🚀 Live Demo  
+🔗 [Click here to explore the live portfolio](https://my-portfolio-inky-pi-70.vercel.app/)  
 
-Functional Contact Form: A direct way to get in touch, thanks to Email.js integration.
+---
 
-🚀 Live Demo
-You can explore the live version of the portfolio here:
-https://my-portfolio-inky-pi-70.vercel.app/
+## 🛠️ Technologies Used  
 
-🛠️ Technologies Used
-Frontend
-HTML5
+### Frontend  
+- HTML5  
+- CSS3  
+- JavaScript (ES6+)  
+- Vanta.js (dynamic background)  
+- Typed.js (typing effect)  
+- ScrollReveal.js (scroll animations)  
 
-CSS3
+### Backend  
+- Email.js (form handling without server)  
 
-JavaScript (ES6+)
+---
 
-Vanta.js: For the dynamic background.
+## ⚙️ Setup Instructions  
 
-Typed.js: For the typing effect.
+To run this project locally:  
 
-ScrollReveal.js: For scroll-based animations.
-
-Backend
-Email.js: To handle form submissions without a server.
-
-⚙️ Setup Instructions
-To get a local copy of this project running on your machine, follow these simple steps:
-
-Clone the repository:
-
-Bash
-
+```bash
+# Clone the repository  
 git clone https://github.com/Shivam0400/MY-PORTFOLIO.git
-Navigate to the project directory:
 
-Bash
+# Navigate to the project directory  
+cd MY-PORTFOLIO  
+Now, simply open the index.html file in your web browser.
 
-cd MY-PORTFOLIO
-Open the website:
-Simply open the index.html file in your web browser.
+```
+Now, simply open the index.html file in your web browser.
 
-📞 Contact
-Feel free to connect with me for any questions, collaborations, or opportunities.
+---
+## 📞 Contact
 
-Email: shivamjais.op09@gmail.com
+Feel free to connect with me for any questions, collaborations, or opportunities:
 
-LinkedIn: https://www.linkedin.com/in/shivam-jaiswal04/
+📧 Email: shivamjais.op09@gmail.com
 
-GitHub: https://github.com/Shivam0400
+🔗 LinkedIn: shivam-jaiswal04
+
+💻 GitHub: Shivam0400
