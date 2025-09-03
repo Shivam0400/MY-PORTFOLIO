@@ -1,45 +1,44 @@
 /* ----- Color Variables ----- */
 :root {
-    --body-color: linear-gradient(to bottom, #f0f4f8, #e7eaf0);
+    --body-color: transparent;
     --color-white: #ffffff;
     --color-black: #000000;
 
     --text-color-primary: #1e293b;
-    --text-color-secondary: #587297;
-    --text-color-tertiary: #c6d0dd;
-    --text-color-accent: #f4e6e6;
-    --text-color-set: #587297;
+    --text-color-secondary: #64748b;
+    --text-color-tertiary: #94a3b8;
+    --text-color-accent: #00e6e6;
 
     --primary-color: #6a0dad;
     --primary-hover: #4b0082;
     --secondary-color: #f0f4f8;
-    --accent-color: #006be6;
+    --accent-color: #00e6e6;
 
     --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     --card-shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.15);
     --border-radius: 16px;
     --border-radius-small: 8px;
-    /* --gradient-animated: linear-gradient(270deg, #6a15a7, #0077e6, #00a0e6); */
+
     --gradient-primary: linear-gradient(135deg, #4b0082 0%, #ff1493 100%);
     --gradient-secondary: linear-gradient(135deg, #00e6e6 0%, #00a0e6 100%);
 }
 
-/* Add this to your style.css file */
+/* --- Vanta.js Background Setup --- */
 #vanta-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Ensures the animation is behind your content */
+    z-index: -1;
 }
 
-/* Update your body background to be transparent so the Vanta effect shows through */
+/* Make sure the body is transparent so the Vanta.js effect shows through */
 body {
     background: transparent;
 }
 
-/* ----- BASE ----- */
+/* --- BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -47,18 +46,13 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-body {
-    background: var(--body-color);
-}
-
 .container {
     width: 100%;
     position: relative;
     overflow-x: hidden;
-    /* not mandatory */
 }
 
-/* ----- PROGRESS BAR ----- */
+/* --- PROGRESS BAR --- */
 .progress-container {
     position: fixed;
     top: 0;
@@ -76,32 +70,31 @@ body {
     transition: width 0.3s ease;
 }
 
-/* ----- SMOOTH SCROLL ----- */
+/* --- SMOOTH SCROLL --- */
 html {
     scroll-behavior: smooth;
 }
 
-/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+/* --- SCROLL BAR DESIGN --- */
 ::-webkit-scrollbar {
     width: 10px;
     border-radius: 25px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--body-color);
+    background: #4b0082;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: #ff1493;
     border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-hover);
+    background: #e55a00;
 }
 
-
-/* ----- GLOBAL BUTTON DESIGN ----- */
+/* --- GLOBAL BUTTON DESIGN --- */
 .btn {
     font-weight: 500;
     padding: 14px 24px;
@@ -114,7 +107,7 @@ html {
     letter-spacing: 0.5px;
 }
 
-.btn>i {
+.btn > i {
     margin-left: 8px;
 }
 
@@ -125,30 +118,12 @@ html {
     box-shadow: var(--card-shadow-hover);
 }
 
-/* ----- GLOBAL ICONS DESIGN ----- */
+/* --- GLOBAL ICONS DESIGN --- */
 i {
     font-size: 16px;
 }
 
-body {
-    /* Replaces the existing body background property */
-    background: var(--gradient-animated);
-    background-size: 400% 400%; /* Make the gradient larger than the viewport */
-    animation: gradientShift 15s ease infinite; /* Apply the animation */
-}
-/* Define the animation keyframes */
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-/* ----- NAVIGATION BAR ----- */
+/* --- NAVIGATION BAR --- */
 nav {
     position: fixed;
     display: flex;
@@ -156,34 +131,15 @@ nav {
     width: 100%;
     height: 90px;
     line-height: 90px;
-    background: var(--body-color);
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     padding-inline: 9vw;
     transition: .3s;
     z-index: 100;
-}
-nav {
-    /* Set the navigation bar background to be semi-transparent for a modern, frosted glass effect */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px); /* Add a blur effect */
-    -webkit-backdrop-filter: blur(5px);
-    /* ... rest of your nav styles */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.nav-link {
-    color: #e0e0e0; /* A very light gray for visibility */
-}
-
-.nav-link:hover {
-    color: var(--accent-color); /* Use a strong accent color on hover */
-}
-
-.active-link {
-    color: var(--accent-color); /* The active link should be highly visible */
-}
-
-.active-link::after {
-    background: var(--accent-color); /* The circle should also use the accent color */
-}
 .nav-logo {
     position: relative;
 }
@@ -191,7 +147,6 @@ nav {
 .nav-name {
     font-size: 28px;
     font-weight: 700;
-    color: var(--text-color-primary);
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -203,7 +158,7 @@ nav {
     top: -15px;
     right: -20px;
     font-size: 5em;
-    color: var(--text-color-second);
+    color: var(--text-color-secondary);
 }
 
 .nav-menu,
@@ -218,15 +173,17 @@ nav {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-color-secondary);
+    color: var(--color-white); /* White text for visibility */
     font-weight: 500;
     padding-inline: 5px;
     margin-inline: 20px;
     transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
 }
 
 .nav-btn {
@@ -248,12 +205,15 @@ nav {
 .nav-menu-btn i {
     font-size: 28px;
     cursor: pointer;
+    color: var(--color-white);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .active-link {
     position: relative;
-    color: var(--primary-color);
+    color: var(--accent-color);
     transition: .3s;
+    text-shadow: 0 0 8px var(--accent-color);
 }
 
 .active-link::after {
@@ -264,17 +224,17 @@ nav {
     transform: translate(-50%, -50%);
     width: 6px;
     height: 6px;
-    background: var(--primary-color);
+    background: var(--accent-color);
     border-radius: 50%;
+    box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color);
 }
 
-
-/* ----- WRAPPER DESIGN ----- */
+/* --- WRAPPER DESIGN --- */
 .wrapper {
     padding-inline: 10vw;
 }
 
-/* ----- FEATURED BOX ----- */
+/* --- FEATURED BOX --- */
 .featured-box {
     position: relative;
     display: flex;
@@ -282,7 +242,6 @@ nav {
     min-height: 700px;
 }
 
-/* ----- FEATURED TEXT BOX ----- */
 .featured-text {
     position: relative;
     display: flex;
@@ -310,6 +269,10 @@ nav {
     margin-block: 20px;
 }
 
+.featured-name p {
+    color: var(--color-white); /* White for the "I'm" text */
+}
+
 .typedText {
     text-transform: capitalize;
     background: var(--gradient-primary);
@@ -321,7 +284,7 @@ nav {
 .featured-text-info {
     font-size: 16px;
     margin-bottom: 30px;
-    color: var(--text-color-secondary);
+    color: var(--text-color-tertiary); /* Light gray for visibility */
     line-height: 1.6;
 }
 
@@ -364,7 +327,6 @@ nav {
     color: var(--primary-color);
 }
 
-/* ----- FEATURED IMAGE BOX ----- */
 .featured-image {
     display: flex;
     justify-content: right;
@@ -414,7 +376,7 @@ nav {
     font-size: 20px;
 }
 
-/* ----- MAIN BOX ----- */
+/* --- MAIN BOX & REUSABLE STYLES --- */
 .section {
     padding-block: 5em;
 }
@@ -431,36 +393,30 @@ nav {
     width: 50%;
 }
 
-/* -- ## --- RESUABLE CSS -- ## -- */
 .top-header {
     text-align: center;
     margin-bottom: 5em;
 }
-.top-header h1 {
-    color: var(--text-color-primary); /* New white color */
-    text-shadow: 1px 1px 5px rgba(254, 254, 254, 0.9);
-}
 
-.top-header span {
-    color: var(--text-color-secondary); /* New light gray color */
-    text-shadow: 1px 1px 5px rgba(25, 185, 177, 0.6);
-}
 .top-header h1 {
     font-weight: 700;
     font-size: 42px;
-    color: var(--text-color-primary);
+    color: var(--color-white); /* White text on the dark animated background */
     margin-bottom: 12px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
 .top-header span {
-    color: var(--text-color-secondary);
+    color: var(--text-color-tertiary); /* Light gray for the subtitle */
     font-size: 16px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
 h3 {
     font-size: 20px;
     font-weight: 600;
-    color: #00e6e6;
+    color: #e200e6;
+    /* color: var(--text-color-dark); */
     margin-bottom: 15px;
 }
 
@@ -468,7 +424,7 @@ a {
     text-decoration: none;
 }
 
-/* ----- ABOUT INFO ----- */
+/* --- ABOUT INFO --- */
 .about-info {
     position: relative;
     display: flex;
@@ -486,14 +442,12 @@ a {
 .about-info p {
     text-align: center;
     font-size: 15px;
-    color: #777;
+    color: #666666; /* Medium gray on white background */
 }
 
 .about-btn .btn {
     position: relative;
     top: 30px;
-    /* right: 20px; */
-    /* bottom: 20px; */
     background: var(--gradient-primary);
     color: var(--color-white);
     border-radius: 30px;
@@ -504,48 +458,7 @@ a {
     color: var(--color-white);
 }
 
-.featured-name p {
-    color: var(--text-color-primary); /* The 'I'm' part will now be white */
-    /* The span for 'typedText' already uses a gradient, so it's fine */
-}
-
-.featured-text-info p {
-    color: var(--text-color-secondary); /* New light gray color */
-}
-
-.project-card,
-.experience-card,
-.education-card {
-    position: relative;
-    overflow: hidden;
-    z-index: 1; /* Ensures the glow is behind the content */
-}
-
-.project-card::before,
-.experience-card::before,
-.education-card::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(106, 13, 173, 0.4), transparent 70%);
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    z-index: -1;
-}
-
-/* Apply the hover effect */
-.project-card:hover::before,
-.experience-card:hover::before,
-.education-card:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-}
-
-/* ----- ABOUT / SKILLS BOX ----- */
+/* --- ABOUT / SKILLS BOX --- */
 .skills-box {
     margin: 10px;
 }
@@ -559,21 +472,7 @@ a {
     flex-wrap: wrap;
     gap: 5px;
 }
-/* Jiggle animation for skills */
-@keyframes jiggle {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(-1deg);
-    }
-    50% {
-        transform: rotate(1deg);
-    }
-    75% {
-        transform: rotate(-1deg);
-    }
-}
+
 .skills-list span {
     font-size: 13px;
     background: var(--gradient-primary);
@@ -587,13 +486,8 @@ a {
 .skills-list span:hover {
     transform: translateY(-2px);
 }
-.skills-list span:hover,
-.tech-stack span:hover,
-.experience-skills span:hover,
-.education-subjects span:hover {
-    animation: jiggle 0.5s ease-in-out infinite;
-}
-/* ----- PROJECTS SECTION ----- */
+
+/* --- PROJECTS SECTION --- */
 .project-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -641,7 +535,7 @@ a {
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     transition: transform 0.3s ease;
 }
 
@@ -709,7 +603,7 @@ a {
 .project-info h3 {
     font-size: 20px;
     font-weight: 600;
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     margin-bottom: 8px;
 }
 
@@ -728,7 +622,7 @@ a {
 
 .tech-stack span {
     background: var(--secondary-color);
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     padding: 6px 12px;
     border-radius: var(--border-radius-small);
     font-size: 12px;
@@ -743,7 +637,7 @@ a {
     transform: translateY(-1px);
 }
 
-/* ----- EXPERIENCE SECTION ----- */
+/* --- EXPERIENCE SECTION --- */
 .experience-container {
     display: flex;
     flex-direction: column;
@@ -811,7 +705,7 @@ a {
 .experience-header h3 {
     font-size: 20px;
     font-weight: 600;
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     margin-bottom: 4px;
 }
 
@@ -843,7 +737,7 @@ a {
 
 .experience-skills span {
     background: var(--secondary-color);
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     padding: 6px 12px;
     border-radius: var(--border-radius-small);
     font-size: 12px;
@@ -858,7 +752,7 @@ a {
     transform: translateY(-1px);
 }
 
-/* ----- EDUCATION SECTION ----- */
+/* --- EDUCATION SECTION --- */
 .education-container {
     display: flex;
     flex-direction: column;
@@ -926,7 +820,7 @@ a {
 .education-header h3 {
     font-size: 20px;
     font-weight: 600;
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     margin-bottom: 4px;
 }
 
@@ -936,6 +830,12 @@ a {
     font-weight: 500;
     color: var(--accent-color);
     margin-bottom: 4px;
+}
+
+.duration {
+    display: block;
+    font-size: 14px;
+    color: var(--text-color-tertiary);
 }
 
 .education-content p {
@@ -952,7 +852,7 @@ a {
 
 .education-subjects span {
     background: var(--secondary-color);
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     padding: 6px 12px;
     border-radius: var(--border-radius-small);
     font-size: 12px;
@@ -967,7 +867,7 @@ a {
     transform: translateY(-1px);
 }
 
-/* ----- CONTACT SECTION ----- */
+/* --- CONTACT SECTION --- */
 .contact-wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -999,34 +899,10 @@ a {
 .contact-header h2 {
     font-size: 28px;
     font-weight: 700;
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     margin-bottom: 12px;
 }
-.project-info h3,
-.experience-content h3,
-.education-content h3 {
-    color: var(--text-color-primary); /* Change to white */
-}
 
-.project-info p,
-.experience-content p,
-.education-content p {
-    color: var(--text-color-set); /* Change to light gray */
-}
-
-.company,
-.institution {
-    color: var(--accent-color); /* Use a bright, eye-catching color */
-}
-
-.contact-header h2 {
-    color: var(--text-color-primary); /* This text is on a white card, so keep it dark */
-    color: var(--text-color-set);
-}
-
-.contact-header p {
-    color: var(--text-color-secondary); /* Keep it dark */
-}
 .contact-header p {
     color: var(--text-color-secondary);
     line-height: 1.6;
@@ -1067,7 +943,7 @@ a {
 .contact-details h4 {
     font-size: 16px;
     font-weight: 600;
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     margin-bottom: 4px;
 }
 
@@ -1084,7 +960,7 @@ a {
 .contact-social h4 {
     font-size: 16px;
     font-weight: 600;
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     margin-bottom: 16px;
 }
 
@@ -1129,7 +1005,7 @@ a {
 .form-header h3 {
     font-size: 24px;
     font-weight: 700;
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
     margin-bottom: 8px;
 }
 
@@ -1153,7 +1029,7 @@ a {
 .form-group label {
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-color-primary);
+    color: var(--text-color-dark);
 }
 
 .form-input,
@@ -1165,6 +1041,7 @@ a {
     font-family: inherit;
     transition: all 0.3s ease;
     background: var(--color-white);
+    color: var(--text-color-dark);
 }
 
 .form-input:focus,
@@ -1205,8 +1082,7 @@ a {
     font-size: 18px;
 }
 
-
-/* ----- CERTIFICATE SECTION ----- */
+/* --- CERTIFICATE SECTION --- */
 .certifications-carousel {
     position: relative;
     max-width: 1150px;
@@ -1226,7 +1102,7 @@ a {
     will-change: transform;
 }
 
-/* ----- CERTIFICATE CARD STYLING ----- */
+/* --- CERTIFICATE CARD STYLING --- */
 .certification-card {
     background: var(--color-white);
     border-radius: var(--border-radius);
@@ -1278,7 +1154,7 @@ a {
     font-weight: 500;
 }
 
-/* ----- NAVIGATION BUTTONS ----- */
+/* --- NAVIGATION BUTTONS --- */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -1320,20 +1196,21 @@ a {
     right: -25px;
 }
 
-/* ----- FOOTER ----- */
+/* --- FOOTER --- */
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    background: var(--body-color);
+    background: transparent;
     padding-block: 40px 60px;
 }
 
 .top-footer p {
     font-size: 25px;
     font-weight: 600;
+    color: var(--color-white);
 }
 
 .middle-footer .footer-menu {
@@ -1346,9 +1223,14 @@ footer {
 
 .footer_menu_list a {
     text-decoration: none;
-    color: var(--text-color-secondary);
+    color: var(--text-color-tertiary);
     font-weight: 500;
     margin-inline: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer_menu_list a:hover {
+    color: var(--accent-color);
 }
 
 .footer-social-icons {
@@ -1359,9 +1241,11 @@ footer {
 .bottom-footer {
     font-size: 14px;
     margin-top: 10px;
+    color: var(--text-color-secondary);
 }
 
-/* ------------Responsive Certificate Section--------------- */
+/* --- RESPONSIVE STYLES --- */
+
 /* For Tablets and smaller desktops */
 @media (max-width: 1150px) {
     .prev-btn {
@@ -1421,7 +1305,7 @@ footer {
     }
 }
 
-/* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
+/* --- MEDIA QUERY == 900px / RESPONSIVE --- */
 @media only screen and (max-width: 900px) {
     .wrapper {
         padding-inline: 5vw;
@@ -1443,7 +1327,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.9);
         backdrop-filter: blur(25px);
         width: 100%;
         min-height: 450px;
@@ -1580,7 +1464,7 @@ footer {
 
 }
 
-/* ----- MEDIA QUERY == 768px / RESPONSIVE ----- */
+/* --- MEDIA QUERY == 768px / RESPONSIVE --- */
 @media only screen and (max-width: 768px) {
     .wrapper {
         padding-inline: 4vw;
@@ -1597,13 +1481,9 @@ footer {
     .middle-footer {
         display: none;
     }
-
-    /* .footer-menu .footer_menu_list{
-        display: none;
-    } */
 }
 
-/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
+/* --- MEDIA QUERY == 540px / RESPONSIVE --- */
 @media only screen and (max-width: 540px) {
     .wrapper {
         padding-inline: 3vw;
@@ -1641,8 +1521,6 @@ footer {
     }
 
     .contact-method {
-        /* flex-direction: column; */
-        /* text-align: center; */
         gap: 12px;
     }
 
@@ -1678,7 +1556,7 @@ footer {
     }
 }
 
-/* ----- MEDIA QUERY == 375px / RESPONSIVE ----- */
+/* --- MEDIA QUERY == 375px / RESPONSIVE --- */
 @media only screen and (max-width: 375px) {
     .wrapper {
         padding-inline: 2vw;
