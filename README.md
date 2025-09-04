@@ -17,7 +17,7 @@ It's designed to be **clean, responsive, and visually engaging**, providing a co
 ---
 
 ## 🚀 Live Demo  
-🔗 [Click here to explore the live portfolio](https://my-portfolio-inky-pi-70.vercel.app/)  
+🔗 [Click here to explore the live portfolio](https://my-portfolio-main-hazel.vercel.app/)  
 
 ---
 
