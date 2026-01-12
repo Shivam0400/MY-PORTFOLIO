@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Certificate Data
     const certificateData = [
         { img: "./certificate/CISCO_Cybersecurity_Essentials.jpg", title: "Cybersecurity Essentials", issuer: "Cisco" },
+        { img: "./certificate/YuvaAI_Certificate.jpg", title: "YUVA AI", issuer: "IndiaAI & Nasscom IT & Future Skills" },
         { img: "./certificate/CDAC_Cyber_Security_&_Ethical_Hacking.jpg", title: "Cyber Security & Ethical Hacking", issuer: "CDAC" },
         { img: "./certificate/CODSOFT_Web_Development.jpg", title: "Web Development Internship", issuer: "Codsoft" },
         { img: "./certificate/HackerRank_Java(Basic).jpg", title: "JAVA Basic", issuer: "HackerRank" },
@@ -292,3 +293,4 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
             alert("Failed to Send Message. Error: " + JSON.stringify(error));
         });
 });
+
